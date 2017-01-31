@@ -1,0 +1,92 @@
+/* =============================================================================
+    6. ELEMENTS
+    ========================================================================= */
+
+/*  
+    6.1. ELEMENTS - ACCORDION
+    ========================================================================= */
+.accordion{
+    overflow: hidden;
+
+    > .title {
+        width: 100%;
+        margin-bottom: 20px;
+        position: relative;
+        float: left;
+
+        > a {
+            display: block;
+            width: 100%;
+            float: left;
+            padding-left: 40px;
+            padding-top: 5px;
+            font-size: 18px;
+            color: $mc-dark;
+            font-weight: $font-weight-semibold;
+        }
+
+        &::before {
+            position: absolute;
+            display: block;
+            top: 0;
+            left: 0;
+            width: 30px;
+            height: 30px;
+            content: "\f067";
+            font-family: "FontAwesome";
+            text-align: center;
+            font-size: 12px;
+            line-height: 30px;
+            color: #fff;
+
+            @include border-radius(50%);
+        }
+
+        &.active::before {
+            content: "\f068";
+        }
+    }
+
+    .content {
+        overflow: hidden;
+        clear: both;
+        padding-left: 40px;
+    }
+
+    &.accordion-boxed {
+        > .title {
+            background-color: #eff3f7;
+            padding: 30px;
+            margin-bottom: 20px;
+
+            &::before {
+                top: 30px;
+                left: 30px;
+            }
+        }
+
+        .content {
+            background-color: #eff3f7;
+            padding: 40px;
+            margin-bottom: 30px;
+
+            p:last-child {
+                padding-bottom: 0;
+            }
+        }
+    }
+
+    &.accordion-dark {
+        > .title {
+            &::before {
+                background-color: $mc-dark;
+            }
+        }
+    }
+}
+
+.page-content.dark .accordion {
+    > .title > a {
+        color: #fff;
+    }
+}

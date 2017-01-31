@@ -1,0 +1,150 @@
+/* 
+    BLue Color Style
+*/
+
+a {
+  &:focus, &:hover {
+    color: #0bb4ce;
+  }
+}
+
+.read-more, #quick-links > li > a, #social-links > li a:hover, .service-box > .icon-container > i {
+  color: #0bb4ce;
+}
+
+a:hover {
+  h1, h2, h3, h4, h5, h6 {
+    color: #0bb4ce;
+  }
+}
+
+.odometer {
+  &.odometer-auto-theme, &.odometer-theme-default {
+    color: #0bb4ce;
+  }
+}
+
+.odometer-inner > i, .cta-social > li > a:hover, #footer-wrapper a:hover, .widget > ul > li::before, .contact-info-list > li > i {
+  color: #0bb4ce;
+}
+
+.header-style-02 {
+  .header-info-widgets > ul > li .text-container a:hover {
+    color: #0bb4ce;
+  }
+  .navbar-default .navbar-nav > li {
+    &.current-menu-item > a, > a:hover {
+      color: #0bb4ce;
+    }
+  }
+}
+
+.fa-ul.large-icons > li .icon-container, #footer-wrapper .pi-latest-posts-02 .post-body h4:hover, .pi-latest-posts-02 .post-body h4:hover {
+  color: #0bb4ce;
+}
+
+.featured-page-box > .body {
+  h2::before, h3::before, h4::before, h5::before, h6::before {
+    color: #0bb4ce;
+  }
+}
+
+.page-content.dark .odometer-value, .service-box.service-box-listed .icon-container > i, .banner-box > i, .page-content.dark .odometer-container .digit-mark, .breadcrumb > li > a:hover, a.download-link::before, .feature-box .icon-container i, .company-timeline .icon-date-container i, .fa-ul.default i, .text-colored, p.text-colored, .pricing-table .price span {
+  color: #0bb4ce;
+}
+
+.cases-grid .portfolio-item .body {
+  h2::before, h3::before, h4::before, h5::before, h6::before {
+    color: #0bb4ce;
+  }
+}
+
+.pi-latest-posts-03 > li > a:hover, .widget > .pi-latest-posts-03 > li > a:hover, .post-comments > ul.comments-li > li .comment .comment-meta > li a:hover {
+  color: #0bb4ce;
+}
+
+.portfolio-blog-nav-simple p > a {
+  &::after, &:hover {
+    color: #0bb4ce;
+  }
+}
+
+.tabs-container {
+  &.tabs-simple > .tabs > li {
+    &.active > a, &:hover a {
+      color: #0bb4ce;
+    }
+  }
+  &.tabs-theme > .tabs > li {
+    &.active a, &:hover a {
+      color: #0bb4ce;
+    }
+  }
+}
+
+.header-cart .cart-container a:hover, .page-title-style-03 .breadcrumb > li > span.active, .widget_nav_menu .menu-item > a:hover:after {
+  color: #0bb4ce;
+}
+
+#quick-links > li > a::before, .btn, .read-more::after, .newsletter-widget .submit, .accordion > .title::before, .testimonial-style-02::before, .wpcf7 .wpcf7-submit, .header-style-02.header-negative-bottom #search, .featured-page-box > .body::before, .fa-ul.ul-circled .icon-container, .custom-heading-03::before {
+  background-color: #0bb4ce;
+}
+
+.company-timeline .timeline-item-details {
+  h1::before, h2::before, h3::before, h4::before, h5::before, h6::before {
+    background-color: #0bb4ce;
+  }
+}
+
+.cases-grid .portfolio-item .body::before {
+  background-color: #0bb4ce;
+}
+
+.pagination {
+  li.active a, > ul > li:hover > a {
+    background-color: #0bb4ce;
+  }
+}
+
+#filters > li {
+  &::before, &.filter-button.is-checked::before {
+    background-color: #0bb4ce;
+  }
+}
+
+.tagcloud > a:hover, .comment-form-container .form-submit #comment-reply, .text-highlighted, .divider-scroll-up .scroll-up:hover, .scroll-up:hover {
+  background-color: #0bb4ce;
+}
+
+.tabs-container.tabs-dark > .tabs > li {
+  &.active a, &:hover a {
+    background-color: #0bb4ce;
+  }
+}
+
+.header-cart .cart-container a .cart-count {
+  background-color: #0bb4ce;
+}
+
+.circle-icon-animate {
+  stroke: #0bb4ce;
+}
+
+blockquote {
+  border-color: #0bb4ce;
+}
+
+.newsletter-widget .submit:hover, .wpcf7 .wpcf7-submit:hover, .comment-form-container .form-submit #comment-reply:hover {
+  background-color: #0998ae;
+}
+
+::-moz-selection {
+  /* Code for Firefox */
+  color: #fff;
+  background: #0bb4ce;
+}
+
+::selection {
+  color: #fff;
+  background: #0bb4ce;
+}

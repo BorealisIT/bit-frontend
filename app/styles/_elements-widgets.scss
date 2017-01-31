@@ -1,0 +1,298 @@
+/*  
+    6.35. ELEMENTS - WIDGETS
+    ========================================================================= */
+
+/*  6.35.1. BASIC WIDGET STYLING
+    ------------------------------------------------------------------------- */ 
+
+.footer-widget-container {
+    .widget {
+        > .title {
+            h1, h2, h3, h4, h5, h6 {
+                color: #fff;
+            }            
+        }
+    }
+}
+
+.widget {
+    display: block;
+    width: 100%;
+    margin-bottom: 50px;
+
+    > .title {
+        h1, h2, h3, h4, h5, h6 {
+            font-size: 18px;
+            margin-bottom: 30px;
+        }
+    }
+
+    > li {
+        list-style: none;
+
+    }
+
+    > ul {
+        padding-left: 0;
+
+        &.contact-info-list {
+            padding-left: 10px;
+            
+            li{
+                list-style: none; 
+
+                &::before{
+                    display: none;
+                }
+            }
+        }
+    }
+
+    > ul > li {
+        position: relative;
+        list-style: none;
+        padding-left: 15px;
+
+        &::before {
+            display: block;
+            position: absolute;
+            content: "\f061";
+            top: -2px;
+            left: 0;
+            font-family: "FontAwesome";
+            font-size: 10px;
+        }
+    }
+}
+
+.aside-widgets {
+    > li.widget:last-child {
+        margin-bottom: 0;
+    }
+}
+
+
+/*  6.35.2. WIDGET - CONTACT INFO LIST 
+    ------------------------------------------------------------------------- */ 
+
+.contact-info-list {
+    > li {
+        padding-left: 25px;
+
+        i {
+            position: relative;
+            margin-left: -25px;
+            margin-right: 10px;
+            width: 20px;
+        }
+    }
+}
+
+
+/*  6.35.3. WIDGET - DOWNLOAD LINKS (BROCHURE DOWNLOAD)
+    ------------------------------------------------------------------------- */ 
+
+a.download-link {
+    position: relative;
+    display: block;
+    width: 100%;
+
+    background-color: #fff;
+    border: 1px solid #eee;
+    padding: 15px 20px 15px 45px;
+    margin-bottom: 2px;
+
+    &::before {
+        display: block;
+        position: absolute;
+        left: 20px;
+        content: "\f1c1";
+        font-family: "FontAwesome";        
+    }
+}
+
+#footer-wrapper {
+    .footer-widget-container {
+        a.download-link {
+            background-color: #1a2236;
+            border-color: #1a2236;
+        }
+    }
+}
+
+
+/*  6.35.4. WIDGET - NAV MENU (IN SIDEBAR)
+    ------------------------------------------------------------------------- */
+
+.widget_nav_menu {
+    .menu {
+        padding-left: 0;
+    }
+
+    .menu-item {
+        width: 100%;
+        list-style: none;
+
+        background-color: #fff;
+        border: 1px solid #eee;
+        padding: 15px 20px;
+        margin-bottom: 2px;
+
+        @include transition($default-transition);
+
+        > a{
+            position: relative;
+            display: block;
+            width: 100%;
+
+            &::after {
+                position: absolute;
+                display: block;
+                content: "\f054";
+                top: -2px;
+                right: 0;
+                font-family: "FontAwesome";
+                font-size: 10px;
+            }
+        }
+
+        &.current-menu-item {
+            background-color: #eff3f7;
+
+            > a:hover{
+                color: $mc-light;
+            }
+        }
+
+        &:hover {
+            background-color: #eff3f7;
+
+            >a {
+                color: $mc-light;
+            }
+        }
+    }
+}
+
+#footer-wrapper {
+    .footer-widget-container {
+        .widget_nav_menu {
+            .menu-item {
+                background-color: #1a2236;
+                border-color: #1a2236;
+
+                &.current-menu-item {
+                    background-color: #242b3c;
+
+                    > a {
+                        color: #fff;
+                    }
+                }
+
+                &:hover {
+                    background-color: #242b3c;
+
+                    > a {
+                        color: $mc-extra-light;
+                    }
+                }
+            }
+        }
+    }
+}
+
+
+/*  6.35.5. WIDGET - NEWSLETTER WIDGET
+    ------------------------------------------------------------------------- */ 
+
+.newsletter-widget {
+    display: table;
+    margin: 0 auto;
+
+    .email {
+        padding: 15px 130px 15px 30px;
+        background-color: #fff;
+        border: 1px solid #e3e3e3;
+        @include border-radius(30px 0 0 30px);
+        @include body-font-stack();
+
+    }
+
+    @include placeholder{
+        color: $mc-regular;            
+    };
+
+    .submit {
+        position: relative;
+        left: -5px;
+        border: none;
+        padding: 15px 30px;
+        text-transform: uppercase;
+        font-weight: $font-weight-medium;
+        color: #fff;
+
+        @include transition($default-transition);
+    }
+}
+
+.aside-widgets {
+    .newsletter-widget {
+        .email {
+            @include border-radius(0);
+        }
+        
+        .submit {
+            margin-top: 5px;
+            left: 0;
+            width: 100%;
+        }
+    }
+}
+
+.footer-widget-container .newsletter-widget {
+    .email {
+        background-color: #1a2236;
+        @include border-radius(30px 0 0 30px);
+        color: $mc-extra-light;
+        border: none;
+    }
+    
+     @include placeholder{
+        color: $mc-extra-light;            
+    };
+    
+    .submit {
+        left: -5px;
+        width: initial;
+    }
+}
+
+
+/*  6.35.6. WIDGET - TAG CLOUD
+    ------------------------------------------------------------------------- */ 
+ 
+.tagcloud {
+    > a {
+        float: left;
+        border: 1px solid #eee;
+        padding: 5px 10px;
+        margin-right: 5px;
+        margin-bottom: 5px;
+
+        &:hover {
+            color: #fff;
+        }
+    }
+}
+
+.footer-widget-container {
+    .tagcloud {
+        > a {
+            border: 1px solid #1a2236;
+
+            &:hover, &:focus {
+                color: #fff !important;
+            }
+        }
+    }
+}

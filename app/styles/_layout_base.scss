@@ -1,0 +1,599 @@
+/* =============================================================================
+    3. BASIC LAYOUT STYLES
+    ========================================================================= */
+#loader {
+    position: fixed;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    background-color: #020919;
+    z-index: 10000;
+
+    > #loading-status {
+        position: absolute;
+        display: block;
+        top: 50%;
+        left: 50%;
+
+        width: 80px;
+        height: 80px;
+
+        margin-top: -50px;
+        margin-left: -50px;
+
+        border: 3px solid transparent;
+        border-top-color: #e21f2f;
+
+        @include border-radius(50%);
+        @include animation-name(rotate);
+        @include duration(2.5s);
+        @include count(infinite);
+
+        @include keyframes(rotate){
+            0% {
+                @include transform(rotate(0deg));
+            }
+
+            100% {
+                @include transform(rotate(360deg));
+            }
+        };
+
+        &::before,
+        &::after{
+            position: absolute;
+            display: block;
+            content: "";
+            border: 3px solid transparent;
+
+            @include border-radius(50%);
+            @include animation-name(rotate);
+            @include duration(3s);
+            @include count(infinite);
+
+            @include keyframes(rotate){
+                0% {
+                    @include transform(rotate(0deg));
+                }
+
+                100% {
+                    @include transform(rotate(360deg));
+                }
+            };
+        }
+
+        &::before {
+            top: 5px;
+            right: 5px;
+            bottom: 5px;
+            left: 5px;
+            border-bottom-color: #0bb4ce;
+        }
+
+        &::after {
+            @include duration(2.5s);
+
+            top: 15px;
+            right: 15px;
+            bottom: 15px;
+            left: 15px;
+            border-top-color: #6ec25b;
+        }
+    }
+}
+
+/*  
+    3.1. PAGE CONTENT
+    ========================================================================= */ 
+
+.page-content { 
+    position: relative;
+
+    &.dark {
+        h1, h2, h3, h4, h5, h6 {
+            color: #fff;
+        }
+
+        a, p, span, li {
+            color: $mc-extra-light;
+        }
+    }
+
+    .row {
+        margin-bottom: 120px;
+
+        div[class^="col-md-"] .cma-wysiwyg-editor {
+            overflow: hidden;
+        }
+
+        &.row-equal-height {
+            margin-bottom: 0;
+
+            .custom-col-padding {
+                padding-top: 120px;
+                padding-bottom: 120px;
+            }
+        }
+
+        &.custom-background {
+            padding: 40px;
+        }
+
+        &.custom-background.bkg-color-white-shadow {
+            background-color: white;
+            border: 1px solid #eee;
+            @include box-shadow(0, 1px, 8px, #eee);
+        }
+    }
+
+    &.custom-background {
+        padding: 150px 0;
+
+        .row {
+
+            &:only-child,
+                &:last-child{
+                margin-bottom: 0;                
+            }
+        }
+
+        &.padding-small {
+            padding: 50px 0;
+        }
+    }
+
+    .page-content-mask {
+        display: block;
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+
+        /* Permalink - use to edit and share this gradient: http://colorzilla.com/gradient-editor/#051b44+0,051b44+50,051b44+100&1+0,0.5+50,0.8+100 */
+        background: -moz-linear-gradient(top,  rgba(5,27,68,1) 0%, rgba(5,27,68,0.5) 50%, rgba(5,27,68,0.8) 100%); /* FF3.6-15 */
+        background: -webkit-linear-gradient(top,  rgba(5,27,68,1) 0%,rgba(5,27,68,0.5) 50%,rgba(5,27,68,0.8) 100%); /* Chrome10-25,Safari5.1-6 */
+        background: linear-gradient(to bottom,  rgba(5,27,68,1) 0%,rgba(5,27,68,0.5) 50%,rgba(5,27,68,0.8) 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+        filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#051b44', endColorstr='#cc051b44',GradientType=0 ); /* IE6-9 */
+
+        &.mask-solid-color {
+            background: none;
+            background-color: rgba(3, 13, 38, 0.6);
+        }
+    }
+}
+
+
+/*  3.1.1. PAGE CONTENT BACKGROUNDS
+    ------------------------------------------------------------------------- */
+
+.background-white-transparent {
+    background-color: rgba(255, 255, 255, 0.1);
+}
+
+.bkg-color-white {
+    background-color: #fff;
+}
+
+.bkg-color-dark {
+    background-color: #09142d;
+}
+
+.bkg-color-light-grey {
+    background-color: #eff3f7;
+}
+
+[class*="bkg-img"] {
+    @include bkg-img-styles();    
+}
+
+.bkg-img01 {
+    background-image: url("../images/pics/consultingpress-parallax-background01.jpg");
+}
+
+.bkg-img02 {
+    background-image: url("../images/pics/consultingpress-parallax-background02.jpg");
+}
+
+.bkg-img03 {
+    background-image: url("../images/pics/consultingpress-it-security-parallax-background01.jpg");
+}
+
+.bkg-img04 {
+    background-image: url("../images/pics/consultingpress-it-security-parallax-background02.jpg");
+}
+
+.bkg-img05 {
+    background-image: url("../images/pics/consultingpress-parallax-background04.jpg");
+}
+
+.bkg-img06 {
+    background-image: url("../images/pics/consultingpress-parallax-background03.jpg");
+}
+
+.bkg-img07 {
+    background-image: url("../images/pics/page-title01.jpg");
+}
+
+.bkg-img08 {
+    background-image: url("../images/pics/page-title02.jpg");
+}
+
+.bkg-img09 {
+    background-image: url("../images/pics/page-title03.jpg");
+}
+
+.bkg-img10 {
+    background-image: url("../images/pics/page-title04.jpg");
+}
+
+.bkg-img11 {
+    background-image: url("../images/pics/page-title05.jpg");
+}
+
+.bkg-img12 {
+    background-image: url("../images/pics/page-title06.jpg");
+}
+
+.bkg-img13 {
+    background-image: url("../images/pics/page-title07.jpg");
+}
+
+.bkg-img14 {
+    background-image: url("../images/pics/page-title08.jpg");
+}
+
+.bkg-img15 {
+    background-image: url("../images/pics/page-title09.jpg");
+}
+
+.bkg-img16 {
+    background-image: url("../images/pics/page-title10.jpg");
+}
+
+.bkg-img17 {
+    background-image: url("../images/pics/page-title11.jpg");
+}
+
+.bkg-img18 {
+    background-image: url("../images/pics/page-title12.jpg");
+}
+
+.bkg-img19 {
+    background-image: url("../images/pics/page-title13.jpg");
+}
+
+.bkg-img20 {
+    background-image: url("../images/pics/page-title14.jpg");
+}
+
+.bkg-img21 {
+    background-image: url("../images/pics/page-title15.jpg");
+}
+
+.bkg-img22 {
+    background-image: url("../images/pics/page-title16.jpg");
+}
+
+.bkg-img23 {
+    background-image: url("../images/pics/page-title17.jpg");
+}
+
+.bkg-img24 {
+    background-image: url("../images/pics/page-title18.jpg");
+}
+
+.bkg-img25 {
+    background-image: url("../images/pics/page-title19.jpg");
+}
+
+.bkg-img26 {
+    background-image: url("../images/pics/page-title20.jpg");
+}
+
+.bkg-img27 {
+    background-image: url("../images/pics/page-title21.jpg");
+}
+
+.bkg-img28 {
+    background-image: url("../images/pics/page-title22.jpg");
+}
+
+.bkg-img29 {
+    background-image: url("../images/pics/page-title23.jpg");
+}
+
+.bkg-img30 {
+    background-image: url("../images/pics/page-title24.jpg");
+}
+
+.bkg-img31 {
+    background-image: url("../images/pics/page-title25.jpg");
+}
+
+.bkg-img32 {
+    background-image: url("../images/pics/page-title26.jpg");
+}
+
+.bkg-img33 {
+    background-image: url("../images/pics/page-title27.jpg");
+}
+
+.bkg-img34 {
+    background-image: url("../images/pics/page-title28.jpg");
+}
+
+.bkg-img35 {
+    background-image: url("../images/pics/page-title29.jpg");
+}
+
+.bkg-img36 {
+    background-image: url("../images/pics/page-title30.jpg");
+}
+
+.bkg-img37 {
+    background-image: url("../images/pics/page-title31.jpg");
+}
+
+.bkg-img38 {
+    background-image: url("../images/pics/page-title32.jpg");
+}
+
+.bkg-img39 {
+    background-image: url("../images/pics/page-title33.jpg");
+}
+
+.bkg-img40 {
+    background-image: url("../images/pics/page-title34.jpg");
+}
+
+
+/*  
+    3.2. HELPSERS - PADDINGS AND MARGINS, CENTERING TEXT...
+    ========================================================================= */ 
+
+*[class^="row"] *[class^="row"]:last-child {
+    margin-bottom: 0;
+}
+
+.mb-0 {
+    margin-bottom: 0 !important;
+}
+
+.mb-30 {
+    margin-bottom: 30px !important;
+}
+
+.mb-80 {
+    margin-bottom: 80px !important;
+}
+
+.mb-120 {
+    margin-bottom: 120px;
+}
+
+.negative-top {
+    margin-top: -80px;
+}
+
+.pt-120 {
+    padding-top: 120px;
+}
+
+.pb-120 {
+    padding-bottom: 120px;
+}
+
+.centered {
+    text-align: center;
+}
+
+
+/*  
+    3.3. PAGE TITLES
+    ========================================================================= */ 
+
+.pt-mask {
+    display: block;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+
+    /* Permalink - use to edit and share this gradient: http://colorzilla.com/gradient-editor/#051b44+0,051b44+50,051b44+100&1+0,0.5+50,0.8+100 */
+    background: -moz-linear-gradient(top,  rgba(5,27,68,1) 0%, rgba(5,27,68,0.5) 50%, rgba(5,27,68,0.8) 100%); /* FF3.6-15 */
+    background: -webkit-linear-gradient(top,  rgba(5,27,68,1) 0%,rgba(5,27,68,0.5) 50%,rgba(5,27,68,0.8) 100%); /* Chrome10-25,Safari5.1-6 */
+    background: linear-gradient(to bottom,  rgba(5,27,68,1) 0%,rgba(5,27,68,0.5) 50%,rgba(5,27,68,0.8) 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#051b44', endColorstr='#cc051b44',GradientType=0 ); /* IE6-9 */
+
+    &.mask-solid-color {
+        background: none;
+        background-color: rgba(3, 13, 38, 0.6);
+    }
+}
+
+.pt-mask-light {
+    display: block;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+
+    /* Permalink - use to edit and share this gradient: http://colorzilla.com/gradient-editor/#ffffff+0,ffffff+100&0.7+1,0.3+100 */
+    background: -moz-linear-gradient(top,  rgba(255,255,255,0.7) 0%, rgba(255,255,255,0.7) 1%, rgba(255,255,255,0.3) 100%); /* FF3.6-15 */
+    background: -webkit-linear-gradient(top,  rgba(255,255,255,0.7) 0%,rgba(255,255,255,0.7) 1%,rgba(255,255,255,0.3) 100%); /* Chrome10-25,Safari5.1-6 */
+    background: linear-gradient(to bottom,  rgba(255,255,255,0.7) 0%,rgba(255,255,255,0.7) 1%,rgba(255,255,255,0.3) 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#b3ffffff', endColorstr='#4dffffff',GradientType=0 ); /* IE6-9 */
+}
+
+.page-title-style-01 {
+    position: relative;
+    padding-bottom: 80px;
+    margin-bottom: 120px;
+
+    &.centered {
+        .pt-heading {
+            > h1,
+            > span {
+                text-align: center;
+                display: block;
+                width: 100%;
+            }
+        }
+    }
+    
+    &.left-aligned {
+        .pt-heading {
+            > h1,
+            > span {
+                text-align: left;
+                display: block;
+                width: 100%;
+            }
+        }
+        
+        .breadcrumb {
+            display: block;
+        }
+    }
+
+    .pt-heading {
+        width: 100%;
+        display: block;
+
+        span {
+            margin-bottom: 30px;
+            color: $mc-extra-light;
+            text-transform: uppercase;
+            letter-spacing: $letter-spacing-large;
+        }
+
+        h1 {
+            color: #fff;
+        }
+    }
+}
+
+.page-title-style-02 {
+    position: relative;
+    padding: 80px 0;
+    margin-bottom: 120px;
+
+    .pt-heading {
+        h1 {
+            margin-bottom: 0;
+            font-size: 24px;
+            line-height: 32px;
+        }
+    }
+}
+
+.page-title-style-03 {
+    background-color: #eff3f7;
+    margin-bottom: 80px;
+    padding: 15px 0;
+    
+    .breadcrumb {
+        display: block;
+        
+        > li {
+            padding-bottom: 0;
+            color: $mc-regular;
+            
+            > a {
+                color: $mc-light;
+            }
+        }
+    }
+}
+
+
+
+/*  
+    3.4. BREADCRUMBS
+    ========================================================================= */ 
+.breadcrumb {
+    display: table;
+    margin: 0 auto;
+    padding: 0;
+    background-color: transparent;
+
+    > li,
+    > li > span,
+    > li > a{
+        font-weight: $font-weight-medium;
+        font-size: 13px;
+        line-height: 23px;
+        color: $mc-extra-light;
+    }
+
+    li {
+
+        &+ li::before {
+            position: relative;        
+            top: -2px;
+            color: $mc-extra-light;
+            content: "\f054";
+            font-family: "FontAwesome";
+            font-size: 6px;
+        }
+
+        &:nth-child(2)::before {
+            color: transparent;
+        }
+    }
+
+    > li > span.active {
+        color: #fff;
+    }
+}
+
+.page-title-style-02 {
+    .breadcrumb {
+        padding-top: 10px;
+        float: right;
+
+        > li,
+        > li > span,
+        > li > a {
+            color: $mc-dark;
+        }
+
+        li {
+            &+ li::before {
+                color: $mc-dark;
+            }
+        }
+
+        > li > span.active {
+            color: $mc-dark;
+            text-decoration: underline;
+        }
+    }
+}
+
+
+/*  
+    3.5. SIDEBAR
+    ========================================================================= */  
+.aside-right {
+    padding-left: 30px;
+}
+
+.aside-left {
+    padding-right: 30px;
+}
+
+
+.grid-presentation [class^="col-"]{
+    border: 1px solid #eee;
+    padding: 60px;
+}
+
+.grid-presentation .row:first-child [class^="col-"] {
+    border: none;
+    padding: 0;
+}

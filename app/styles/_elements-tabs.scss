@@ -1,0 +1,109 @@
+/*  
+    6.31. ELEMENTS - TABS
+    ========================================================================= */
+
+.tabs-container {
+    > .tabs {
+        overflow: hidden;
+
+        > li {
+            position: relative;
+            overflow: hidden;   
+            float: left;
+            list-style: none;
+            cursor: pointer;
+
+            > a {
+                padding-right: 25px;
+                color: $mc-dark;
+                font-weight: $font-weight-medium;
+            }
+        }
+
+        &.vertical {
+            float: left;
+            width: 30%;
+            border-right: 1px solid #eee;
+
+            > li {
+                width: 100%;
+                border-bottom: none;
+
+                a {
+                    display: block;
+                    width: 100%;                    
+                }
+            }
+        }
+    }
+
+    > .tab-content-wrap {
+        width: 100%;
+        overflow: hidden;
+        padding-top: 30px;
+
+        &.vertical {
+            float: left;
+            width: 70%;
+            padding-top: 0;
+            padding-left: 30px;
+        }
+    }
+
+    &.tabs-simple {
+        > .tabs {
+            > li {
+                padding-bottom: 15px;
+                border-bottom: 1px solid #eee;
+            }
+
+            &.vertical {
+                > li {
+                    width: 100%;
+                    border-bottom: none;
+                }
+            }
+        }
+
+
+    }
+
+    &.tabs-dark {
+        > .tabs {
+            > li {
+                padding: 0;
+
+                a {
+                    background-color: $mc-dark;
+                    display: block;
+                    color: #fff;
+                    padding: 15px 25px;
+                }
+            }
+        }
+
+        > .tab-content-wrap {
+            padding: 40px;
+            background-color: #eff3f7;
+        }
+    }
+
+    &.tabs-theme {
+        > .tabs {
+            > li {
+                padding: 0;
+
+                a {
+                    background-color: #eff3f7;
+                    display: block;
+                    color: $mc-dark;
+                    padding: 15px 25px;
+                }
+            }
+        }
+
+        > .tab-content-wrap {
+            background-color: #fff;
+        }
+    }
+}

@@ -1,0 +1,21 @@
+/*  
+    6.7. ELEMENTS - CHART
+    ========================================================================= */
+
+.chart-container {
+    position: relative;
+    max-width: 100%;
+
+    &.chart-center {
+        display: table;
+        margin: 0 auto;
+    }
+
+    iframe {
+        min-height: 0px;
+    }
+    
+    canvas {
+        max-width: 100%;
+    }
+}
