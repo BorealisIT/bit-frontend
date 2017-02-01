@@ -10,7 +10,7 @@
      * Main module of the application.
      */
     angular
-        .module('borealis', ['ui.router', 'uiGmapgoogle-maps'])
+        .module('borealis', ['ui.router', 'uiGmapgoogle-maps', 'angular-owl-carousel'])
         .config(['$stateProvider', '$urlRouterProvider', '$locationProvider', 'uiGmapGoogleMapApiProvider', function($stateProvider, $urlRouterProvider, $locationProvider, uiGmapGoogleMapApiProvider) {
             uiGmapGoogleMapApiProvider.configure({
                 key: 'AIzaSyAJyaZXxDI2C8g_eCGkBED6TLqsZ7QKShQ',
