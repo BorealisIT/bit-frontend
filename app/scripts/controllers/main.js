@@ -2,10 +2,10 @@
 
 /**
  * @ngdoc function
- * @name neatNycApp.controller:MainCtrl
+ * @name borealis.controller:MainCtrl
  * @description
  * # MainCtrl
- * Controller of the neatNycApp
+ * Controller of the borealis
  */
 angular.module('borealis')
     .controller('MainController', function($scope) {

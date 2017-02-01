@@ -3,9 +3,9 @@
 
     /**
      * @ngdoc overview
-     * @name neatNycApp
+     * @name borealis
      * @description
-     * # neatNycApp
+     * # borealis
      *
      * Main module of the application.
      */

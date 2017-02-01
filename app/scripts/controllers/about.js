@@ -2,12 +2,12 @@
 
 /**
  * @ngdoc function
- * @name neatNycApp.controller:MainCtrl
+ * @name borealis.controller:MainCtrl
  * @description
  * # MainCtrl
- * Controller of the neatNycApp
+ * Controller of the borealis
  */
-angular.module('neatNycApp')
+angular.module('borealis')
   .controller('AboutController', function () {
     this.awesomeThings = [
       'HTML5 Boilerplate',
