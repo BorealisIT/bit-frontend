@@ -26,7 +26,6 @@ module.exports = function(config) {
       'bower_components/angular-simple-logger/dist/angular-simple-logger.js',
       'bower_components/lodash/lodash.js',
       'bower_components/angular-google-maps/dist/angular-google-maps.js',
-      'bower_components/angular-owl-carousel/src/angular-owl-carousel.js',
       'bower_components/angular-mocks/angular-mocks.js',
       // endbower
       'app/scripts/**/*.js',

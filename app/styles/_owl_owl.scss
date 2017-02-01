@@ -1,0 +1,198 @@
+/* 
+ *  Core Owl Carousel CSS File
+ */
+
+.owl-carousel {
+  display: none;
+  width: 100%;
+  -webkit-tap-highlight-color: transparent;
+  /* position relative and z-index fix webkit rendering fonts issue */
+  position: relative;
+  z-index: 1;
+  .owl-stage {
+    position: relative;
+    -ms-touch-action: pan-Y;
+    &:after {
+      content: ".";
+      display: block;
+      clear: both;
+      visibility: hidden;
+      line-height: 0;
+      height: 0;
+    }
+  }
+  .owl-stage-outer {
+    position: relative;
+    overflow: hidden;
+    /* fix for flashing background */
+    -webkit-transform: translate3d(0px, 0px, 0px);
+  }
+  .owl-item {
+    position: relative;
+    min-height: 1px;
+    float: left;
+    -webkit-backface-visibility: hidden;
+    -webkit-tap-highlight-color: transparent;
+    -webkit-touch-callout: none;
+    img {
+      display: block;
+      width: 100%;
+      -webkit-transform-style: preserve-3d;
+    }
+  }
+  .owl-nav.disabled, .owl-dots.disabled {
+    display: none;
+  }
+  .owl-nav {
+    .owl-prev, .owl-next {
+      cursor: pointer;
+      cursor: hand;
+      -webkit-user-select: none;
+      -khtml-user-select: none;
+      -moz-user-select: none;
+      -ms-user-select: none;
+      user-select: none;
+    }
+  }
+  .owl-dot {
+    cursor: pointer;
+    cursor: hand;
+    -webkit-user-select: none;
+    -khtml-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+  }
+  &.owl-loaded {
+    display: block;
+  }
+  &.owl-loading {
+    opacity: 0;
+    display: block;
+  }
+  &.owl-hidden {
+    opacity: 0;
+  }
+  &.owl-refresh .owl-item {
+    display: none;
+  }
+  &.owl-drag .owl-item {
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+  }
+  &.owl-grab {
+    cursor: move;
+    cursor: -webkit-grab;
+    cursor: -o-grab;
+    cursor: -ms-grab;
+    cursor: grab;
+  }
+  &.owl-rtl {
+    direction: rtl;
+    .owl-item {
+      float: right;
+    }
+  }
+}
+
+/* No Js */
+
+.no-js .owl-carousel {
+  display: block;
+}
+
+/* CUSTOM CSS */
+
+.carousel-container {
+  overflow: hidden;
+}
+
+.owl-carousel {
+  cursor: pointer;
+  min-height: 80px;
+}
+
+.owl-carousel-navigation {
+  .owl-controls .owl-nav {
+    position: absolute;
+    top: 50%;
+    height: 60px;
+    right: 0;
+    margin-top: -20px;
+    .owl-prev, .owl-next {
+      position: absolute;
+      right: -30px;
+      width: 30px;
+      height: 30px;
+      background-color: #353e44;
+      text-indent: -9999px;
+      background-repeat: no-repeat;
+      background-position: center;
+      transition: all 0.2s ease-in-out 0s;
+      -webkit-transition: all 0.2s ease-in-out 0s;
+      -moz-transition: all 0.2s ease-in-out 0s;
+      -ms-transition: all 0.2s ease-in-out 0s;
+    }
+    .owl-prev {
+      top: -15px;
+      background-image: url('../images/nivo-prev-nav.png');
+    }
+  }
+  &.owl-carousel:hover .owl-controls .owl-nav {
+    .owl-prev, .owl-next {
+      right: 0;
+    }
+  }
+  .owl-controls .owl-nav .owl-next {
+    top: 15px;
+    background-image: url('../images/nivo-next-nav.png');
+  }
+}
+
+.owl-theme .owl-dots {
+  text-align: center;
+  display: table;
+  margin: 20px auto 0;
+}
+
+.owl-controls {
+  .owl-dot {
+    float: left;
+  }
+  span {
+    display: block;
+    width: 12px;
+    height: 12px;
+    margin: 5px 7px;
+    -webkit-border-radius: 20px;
+    -moz-border-radius: 20px;
+    border-radius: 20px;
+    background-color: #ddd;
+  }
+}
+
+.owl-buttons {
+  .owl-nav {
+    text-align: center;
+    margin-top: 30px;
+  }
+  .owl-prev, .owl-next {
+    display: inline-block;
+    margin: 0 5px;
+    padding: 10px 25px;
+    background-color: #fcfcfc;
+    border: 1px solid #ddd;
+    font-size: 12px;
+    font-weight: 700;
+    text-transform: uppercase;
+    transition: all 0.3s ease-in-out 0s;
+    -webkit-transition: all 0.3s ease-in-out 0s;
+    -moz-transition: all 0.3s ease-in-out 0s;
+    -ms-transition: all 0.3s ease-in-out 0s;
+  }
+  .owl-prev:hover, .owl-next:hover {
+    color: #fff;
+  }
+}
