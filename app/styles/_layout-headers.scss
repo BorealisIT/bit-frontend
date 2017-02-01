@@ -14,7 +14,7 @@
         position: fixed;
         top: 0;
 
-        background-color: transparent;
+        background-color: #FFFFFF;
         @include box-shadow-none(none);
 
         // adding solid background color for fixed header
@@ -437,8 +437,7 @@
     ========================================================================= */
 
 .header-style-02 {
-    position: fixed;
-    top: 0;
+    position: relative;
 
     .top-bar-wrapper {
         margin-bottom: 0;

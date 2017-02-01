@@ -840,11 +840,12 @@ var VolcannoInclude = {
                     width: 1140, // slider standard width
                     height: 650, // slider standard height
                     space: 0,
-                    speed: 30,
+                    speed: 10,
                     layout: "fullwidth",
                     centerControls: true,
                     loop: true,
-                    autoplay: false
+                    autoplay: true,
+                    overPause: true
                             // more slider options goes here...
                             // check slider options section in documentation for more options.
                 });
