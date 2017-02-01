@@ -18,7 +18,7 @@ module.exports = function(grunt) {
         ngtemplates: 'grunt-angular-templates',
         cdnify: 'grunt-google-cdn'
     });
-
+    var modRewrite = require('connect-modrewrite');
     // Configurable paths for the application
     var appConfig = {
         app: require('./bower.json').appPath || 'app',
@@ -60,7 +60,7 @@ module.exports = function(grunt) {
                     livereload: '<%= connect.options.livereload %>'
                 },
                 files: [
-                    '<%= yeoman.app %>/{,*/}*.html',
+                    '<%= yeoman.app %>/**/*.html',
                     '.tmp/styles/{,*/}*.css',
                     '<%= yeoman.app %>/images/{,*/}*.{png,jpg,jpeg,gif,webp,svg}'
                 ]
@@ -80,6 +80,7 @@ module.exports = function(grunt) {
                     open: true,
                     middleware: function(connect) {
                         return [
+                            modRewrite(['!\\.html|\\.js|\\.woff2|\\.ttf|\\.jpg|\\.woff|\\.svg|\\.css|\\.png$ /index.html [L]']),
                             connect.static('.tmp'),
                             connect().use(
                                 '/bower_components',

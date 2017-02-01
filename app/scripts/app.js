@@ -10,7 +10,7 @@
      * Main module of the application.
      */
     angular
-        .module('borealis', ['ui.router', 'uiGmapgoogle-maps'])
+        .module('borealis', ['ui.router', 'uiGmapgoogle-maps','ncy-angular-breadcrumb'])
         .config(['$stateProvider', '$urlRouterProvider', '$locationProvider', 'uiGmapGoogleMapApiProvider', function($stateProvider, $urlRouterProvider, $locationProvider, uiGmapGoogleMapApiProvider) {
             uiGmapGoogleMapApiProvider.configure({
                 key: 'AIzaSyAJyaZXxDI2C8g_eCGkBED6TLqsZ7QKShQ',
@@ -42,15 +42,29 @@
                         },
                         footer: footer
                     }
-                }).state('privacy', {
-                    url: '/privacy',
+                }).state('about', {
+                    url: '/about',
                     name: 'main',
                     controller: 'MainController',
                     controllerAs: 'main',
                     views: {
                         header: stdHeader,
                         content: {
-                            templateUrl: 'views/privacy.html',
+                            templateUrl: 'views/about/about.html',
+                            controller: 'MainController',
+                            controllerAs: 'main'
+                        },
+                        footer: footer
+                    }
+                }).state('about.history', {
+                    url: '/history',
+                    name: 'main',
+                    controller: 'MainController',
+                    controllerAs: 'main',
+                    views: {
+                        header: stdHeader,
+                        content: {
+                            templateUrl: 'views/about/history.html',
                             controller: 'MainController',
                             controllerAs: 'main'
                         },
