@@ -17,7 +17,6 @@ reports/
 
 # Build
 build/
-dist/
 .tmp
 .cache/
 
@@ -35,8 +34,6 @@ test/temp
 .sass-cache
 .grunt
 
-# Shippable directory
-shippable/
 
 # OS generated files
 .DS_Store
@@ -46,23 +43,6 @@ shippable/
 .Trashes
 ehthumbs.db
 Thumbs.db
-
-# Cordova
-platforms/
-plugins/
-
-# Visual Studio Code
-.vscode/
-
-# Visual Studio
-*.csproj.user
-obj/
-*.suo
-*.csproj.user
-*.DotSettings.user
-
-# Fuse
-.build/
 
 # Changelog
 CHANGELOG.md
