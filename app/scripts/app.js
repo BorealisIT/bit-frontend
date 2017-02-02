@@ -10,11 +10,14 @@
      * Main module of the application.
      */
     angular
-        .module('borealis', ['ui.router', 'uiGmapgoogle-maps','ncy-angular-breadcrumb'])
-        .config(['$stateProvider', '$urlRouterProvider', '$locationProvider', 'uiGmapGoogleMapApiProvider', function($stateProvider, $urlRouterProvider, $locationProvider, uiGmapGoogleMapApiProvider) {
+        .module('borealis', ['ui.router', 'uiGmapgoogle-maps', 'ncy-angular-breadcrumb', 'ngSanitize'])
+        .config(['$stateProvider', '$urlRouterProvider', '$locationProvider', 'uiGmapGoogleMapApiProvider', '$breadcrumbProvider', function($stateProvider, $urlRouterProvider, $locationProvider, uiGmapGoogleMapApiProvider, $breadcrumbProvider) {
             uiGmapGoogleMapApiProvider.configure({
                 key: 'AIzaSyAJyaZXxDI2C8g_eCGkBED6TLqsZ7QKShQ',
                 libraries: 'weather,geometry,visualization'
+            });
+            $breadcrumbProvider.setOptions({
+                templateUrl: 'views/templates/breadcrumb.html'
             });
             $urlRouterProvider.otherwise('/');
             var stdHeader = {
@@ -41,6 +44,9 @@
                             controllerAs: 'main'
                         },
                         footer: footer
+                    },
+                    ncyBreadcrumb: {
+                        label: 'Home Page'
                     }
                 }).state('about', {
                     url: '/about',
@@ -55,6 +61,10 @@
                             controllerAs: 'main'
                         },
                         footer: footer
+                    },
+                    ncyBreadcrumb: {
+                        parent: 'home',
+                        label: 'About'
                     }
                 }).state('about.history', {
                     url: '/history',
@@ -72,7 +82,6 @@
                     }
                 });
             $locationProvider.html5Mode(true);
-
 
         }])
         .run(function() {

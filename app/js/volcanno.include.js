@@ -1327,6 +1327,7 @@ var VolcannoInclude = {
                 break;
                 // Testimonial carousel 02
             case "testimonial-carousel-02":
+            console.log("Fired");
                 jQuery("#testimonial-carousel-02").owlCarousel({
                     items: 2,
                     dots: false,

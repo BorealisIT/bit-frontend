@@ -1,0 +1,20 @@
+<div class='row'>
+<div class="col-md-12">
+                <div class="breadcrumb-container">
+                    <ul class="breadcrumb">
+                        <li>You are here: </li>
+
+                        <li ng-repeat="step in steps | limitTo:(steps.length-1)">
+        <a href="{{step.ncyBreadcrumbLink}}" ng-bind-html="step.ncyBreadcrumbLabel"></a>
+    </li>
+
+                        <li ng-repeat="step in steps | limitTo:-1" class="active">
+        <span ng-bind-html="step.ncyBreadcrumbLabel"></span>
+    </li>
+                    </ul>
+                    <!-- .breadcrumb end -->
+                </div>
+                <!-- .breadcrumb-container end -->
+            </div>
+            <!-- .col-md-12 end -->
+            </div>
