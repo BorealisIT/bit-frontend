@@ -8,11 +8,12 @@
  * Controller of the borealis
  */
 angular.module('borealis')
-    .controller('MainController', function($scope) {
+    .controller('MainController', function($scope, $state) {
         this.awesomeThings = [
             'HTML5 Boilerplate',
             'AngularJS',
             'Karma'
         ];
+        $scope.state = $state.current;
         
     });

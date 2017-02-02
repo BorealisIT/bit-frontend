@@ -17,6 +17,7 @@
                 libraries: 'weather,geometry,visualization'
             });
             $breadcrumbProvider.setOptions({
+                prefixStateName: 'home',
                 templateUrl: 'views/templates/breadcrumb.html'
             });
             $urlRouterProvider.otherwise('/');
@@ -48,15 +49,33 @@
                     ncyBreadcrumb: {
                         label: 'Home Page'
                     }
-                }).state('about', {
-                    url: '/about',
-                    name: 'main',
+                }).state('contact', {
+                    url: '/contact',
+                    name: 'contact',
                     controller: 'MainController',
                     controllerAs: 'main',
                     views: {
                         header: stdHeader,
                         content: {
-                            templateUrl: 'views/about/about.html',
+                            templateUrl: 'views/contact/contact.html',
+                            controller: 'MainController',
+                            controllerAs: 'main'
+                        },
+                        footer: footer
+                    },
+                    ncyBreadcrumb: {
+                        parent: 'home',
+                        label: 'Contact Us'
+                    }
+                }).state('about', {
+                    url: '/about',
+                    name: 'about',
+                    controller: 'MainController',
+                    controllerAs: 'main',
+                    views: {
+                        header: stdHeader,
+                        content: {
+                            templateUrl: '/views/about/about.html',
                             controller: 'MainController',
                             controllerAs: 'main'
                         },
@@ -66,25 +85,30 @@
                         parent: 'home',
                         label: 'About'
                     }
-                }).state('about.history', {
-                    url: '/history',
-                    name: 'main',
+                }).state('history', {
+                    url: '/about/history',
+                    name: 'history',
                     controller: 'MainController',
                     controllerAs: 'main',
                     views: {
                         header: stdHeader,
                         content: {
-                            templateUrl: 'views/about/history.html',
+                            templateUrl: '/views/about/history.html',
                             controller: 'MainController',
                             controllerAs: 'main'
                         },
                         footer: footer
+                    },
+                    ncyBreadcrumb: {
+                        parent: 'about',
+                        label: 'Company History'
                     }
                 });
             $locationProvider.html5Mode(true);
 
         }])
-        .run(function() {
+        .run(function($rootScope, $state) {
+            $rootScope.$state = $state;
 
         });
 })();
