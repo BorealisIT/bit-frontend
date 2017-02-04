@@ -1,0 +1,29 @@
+## Customize test commands
+machine:
+  services:
+    - docker
+dependencies:
+  pre:
+    - npm install -g bower 
+    - npm install -g grunt-cli
+    - npm install -g karma-cli
+    - npm install -g compass
+    - npm install -g grunt-contrib-compass
+    - npm install -g es6-promise
+    - npm install
+    - bower install
+  override:
+    - docker info
+    - docker login -u $DOCKER_USER -p $DOCKER_PASS -e $DOCKER_EMAIL
+    - docker build -t borealisit/bit-frontend .
+test:
+  override:
+    - npm test
+    - docker run -d -p 5000:5000 borealisit/bit-frontend; sleep 10
+    - curl --retry 10 --retry-delay 5 -v http://localhost:5000
+deployment:
+  production:
+    branch: master
+    commands:
+      - docker push borealisit/bit-frontend
+      - sh ./deploy.sh
