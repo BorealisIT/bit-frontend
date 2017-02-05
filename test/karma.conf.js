@@ -7,6 +7,7 @@ module.exports = function(config) {
   config.set({
     // enable / disable watching file and executing tests whenever any file changes
     autoWatch: true,
+    failOnEmptyTestSuite: false,
 
     // base path, that will be used to resolve files and exclude
     basePath: '../',
@@ -25,18 +26,12 @@ module.exports = function(config) {
       'bower_components/angular-ui-router/release/angular-ui-router.js',
       'bower_components/angular-simple-logger/dist/angular-simple-logger.js',
       'bower_components/lodash/lodash.js',
-      'bower_components/markerclustererplus/src/markerclusterer.js',
-      'bower_components/google-maps-utility-library-v3-markerwithlabel/dist/markerwithlabel.js',
-      'bower_components/google-maps-utility-library-v3-infobox/dist/infobox.js',
-      'bower_components/google-maps-utility-library-v3-keydragzoom/dist/keydragzoom.js',
-      'bower_components/js-rich-marker/src/richmarker.js',
       'bower_components/angular-google-maps/dist/angular-google-maps.js',
       'bower_components/angular-breadcrumb/release/angular-breadcrumb.js',
       'bower_components/angular-sanitize/angular-sanitize.js',
       'bower_components/angular-mocks/angular-mocks.js',
       // endbower
       'app/scripts/**/*.js',
-      'test/mock/**/*.js',
       'test/spec/**/*.js'
     ],
 
