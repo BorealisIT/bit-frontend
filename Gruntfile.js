@@ -24,6 +24,7 @@ module.exports = function(grunt) {
         app: require('./bower.json').appPath || 'app',
         dist: 'dist'
     };
+    var serveStatic = require('serve-static');
 
     // Define the configuration for all the tasks
     grunt.initConfig({
@@ -81,16 +82,16 @@ module.exports = function(grunt) {
                     middleware: function(connect) {
                         return [
                             modRewrite(['!\\.html|\\.js|\\.woff2|\\.ttf|\\.jpg|\\.woff|\\.svg|\\.css|\\.png$ /index.html [L]']),
-                            connect.static('.tmp'),
+                            serveStatic('.tmp'),
                             connect().use(
                                 '/bower_components',
-                                connect.static('./bower_components')
+                                serveStatic('./bower_components')
                             ),
                             connect().use(
                                 '/app/styles',
-                                connect.static('./app/styles')
+                                serveStatic('./app/styles')
                             ),
-                            connect.static(appConfig.app)
+                            serveStatic(appConfig.app)
                         ];
                     }
                 }
@@ -100,13 +101,13 @@ module.exports = function(grunt) {
                     port: 9001,
                     middleware: function(connect) {
                         return [
-                            connect.static('.tmp'),
-                            connect.static('test'),
+                            serveStatic('.tmp'),
+                            serveStatic('test'),
                             connect().use(
                                 '/bower_components',
-                                connect.static('./bower_components')
+                                serveStatic('./bower_components')
                             ),
-                            connect.static(appConfig.app)
+                            serveStatic(appConfig.app)
                         ];
                     }
                 }
@@ -175,7 +176,7 @@ module.exports = function(grunt) {
         postcss: {
             options: {
                 processors: [
-                    require('autoprefixer-core')({ browsers: ['last 1 version'] })
+                    require('autoprefixer')({ browsers: ['last 1 version'] })
                 ]
             },
             server: {

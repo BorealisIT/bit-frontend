@@ -23,7 +23,7 @@
                                 <!-- .logo start -->
                                 <div id="logo">
                                     <a href="/">
-                                        <img src="images/borealis-it2.a8f1619b.svg" alt="Borealis IT" />
+                                        <img src="images/borealis-it2.9216a19c.svg" alt="Borealis IT" />
                                     </a>
                                 </div>
                                 <!-- .logo -->
@@ -126,16 +126,16 @@
 
                                     <!-- navigation links start -->
                                     <ul class="nav navbar-nav">
-                                        <li class="current-menu-item">
+                                        <li ng-class="state.name == 'home' ? 'current-menu-item' : 'menu-item'">
                                             <a href="it-security-index.html">Home</a>
                                         </li>
 
-                                        <li class="menu-item-has-children dropdown">
+                                        <li class="menu-item-has-children dropdown" ng-class="state.name == 'about' || state.ncyBreadcrumb.parent == 'about' ? 'current-menu-item' : ''">
                                             <a href="#" data-toggle="dropdown" class="dropdown-toggle" role="button">Who we are</a>
 
                                             <ul class="dropdown-menu">
-                                                <li><a href="it-security-about.html">About Us</a></li>
-                                                <li><a href="it-security-our-history.html">Our History</a></li>
+                                                <li><a ui-sref="about">About Us</a></li>
+                                                <li><a ui-sref="history">Our History</a></li>
                                                 <li><a href="it-security-our-team.html">Our Team</a></li>
                                                 <li><a href="it-security-team-member.html">Team Member Page</a></li>
 
@@ -147,11 +147,6 @@
                                                         <li><a href="it-security-job-single.html">Vacancy page</a></li>
                                                     </ul>
                                                 </li>
-
-                                                <li><a href="it-security-faq.html">FAQ</a></li>
-                                                <li><a href="it-security-testimonials.html">Testimonials</a></li>
-                                                <li><a href="it-security-partners.html">Partners</a></li>
-                                                <li><a href="it-security-pricing.html">Pricing</a></li>
                                                 <li><a href="it-security-events.html">Events</a></li>
                                             </ul>
                                         </li>
@@ -190,97 +185,13 @@
                                             </ul>
                                         </li>
 
-                                        <li class="menu-item-has-children dropdown">
-                                            <a href="#" data-toggle="dropdown" class="dropdown-toggle" role="button">Contact</a>
+                                        <li ng-class="state.name == 'contact' ? 'current-menu-item' : 'menu-item'">
+                                            <a ui-sref="contact">Contact</a>
 
-                                            <ul class="dropdown-menu">
-                                                <li><a href="it-security-contact-simple.html">Contact Simple</a></li>
-                                                <li><a href="it-security-contact-compact.html">Contact Compact</a></li>
-                                                <li><a href="it-security-contact-multilocation.html">Contact Multi Location</a></li>
-                                            </ul>
+                                            
                                         </li>
 
-                                        <li class="dropdown pi-mega-fw menu-item-has-children">
-                                            <a href="#" data-toggle="dropdown" class="dropdown-toggle" role="button">Elements</a>
-
-                                            <ul class="dropdown-menu">
-                                                <li>
-                                                    <div class="pi-mega-content">
-                                                        <!-- .row start -->
-                                                        <div class="row">
-                                                            <!-- .col-md-3 start -->
-                                                            <div class="col-md-3 pi-mm-col">
-                                                                <ul class="pi-mm-list">
-                                                                    <li>
-                                                                        <h3>Basic elements</h3>
-                                                                    </li>
-
-                                                                    <li><a href="it-security-elements-typography.html">Typography</a></li>
-                                                                    <li><a href="it-security-elements-grid.html">Grid system</a></li>
-                                                                    <li><a href="it-security-elements-dividers.html">Dividers</a></li>
-                                                                    <li><a href="it-security-elements-buttons.html">Buttons</a></li>
-                                                                    <li><a href="it-security-elements-lists.html">List styles</a></li>
-                                                                </ul>
-                                                                <!-- .pi-mm-list end -->
-                                                            </div>
-                                                            <!-- .col-md-3 end -->
-
-                                                            <!-- .col-md-3 start -->
-                                                            <div class="col-md-3 pi-mm-col">
-                                                                <ul class="pi-mm-list">
-                                                                    <li>
-                                                                        <h3>Interactive elements</h3>
-                                                                    </li>
-
-                                                                    <li><a href="it-security-elements-counters.html">Counters</a></li>
-                                                                    <li><a href="it-security-elements-charts.html">Charts</a></li>
-                                                                    <li><a href="it-security-elements-carousels.html">Carousels</a></li>
-                                                                    <li><a href="it-security-elements-animations.html">Content animations</a></li>
-                                                                    <li><a href="it-security-elements-social-widgets.html">Social widgets</a></li>
-                                                                </ul>
-                                                            </div>
-                                                            <!-- .col-md-3 end -->
-
-                                                            <!-- .col-md-3 start -->
-                                                            <div class="col-md-3 pi-mm-col">
-                                                                <ul class="pi-mm-list">
-                                                                    <li>
-                                                                        <h3>Always needed elements</h3>
-                                                                    </li>
-
-                                                                    <li><a href="it-security-elements-tabs.html">Tabs</a></li>
-                                                                    <li><a href="it-security-elements-accordion.html">Accordion</a></li>
-                                                                    <li><a href="it-security-elements-tables.html">Tables</a></li>
-                                                                    <li><a href="it-security-elements-pricing-tables.html">Pricing tables</a></li>
-                                                                    <li><a href="it-security-elements-contact-forms.html">Contact forms</a></li>
-                                                                </ul>
-                                                            </div>
-                                                            <!-- .col-md-3 end -->
-
-                                                            <!-- .col-md-3 start -->
-                                                            <div class="col-md-3 pi-mm-col">
-                                                                <ul class="pi-mm-list">
-                                                                    <li>
-                                                                        <h3>And more...</h3>
-                                                                    </li>
-
-                                                                    <li><a href="it-security-elements-feature-boxes.html">Feature boxes</a></li>
-                                                                    <li><a href="it-security-elements-message-boxes.html">Message boxes</a></li>
-                                                                    <li><a href="it-security-elements-testimonials.html">Testimonials</a></li>
-                                                                    <li><a href="it-security-elements-latest-posts.html">Latest posts</a></li>
-                                                                    <li><a href="it-security-elements-google-maps.html">Google maps</a></li>
-                                                                </ul>
-                                                            </div>
-                                                            <!-- .col-md-3 end -->
-                                                        </div>
-                                                        <!-- .row end -->
-                                                    </div>
-                                                    <!-- .pi-mega-content end -->
-                                                </li>
-                                            </ul>
-                                            <!-- .dropdown-menu end -->
-                                        </li>
-                                        <!-- .dropdown.pi-mega-fw end -->
+                                        
                                     </ul>
                                     <!-- .nav.navbar-nav end -->
                                 </div>
@@ -305,16 +216,9 @@
                                             </a>
 
                                             <ul class="wpml-lang-dropdown">
-                                                <li>
-                                                    <a href="#">de</a>
-                                                </li>
 
                                                 <li>
-                                                    <a href="#">fr</a>
-                                                </li>
-
-                                                <li>
-                                                    <a href="#">en</a>
+                                                    <a href="/">en</a>
                                                 </li>
                                             </ul>
                                             <!-- .wpml-lang-dropdown end -->
