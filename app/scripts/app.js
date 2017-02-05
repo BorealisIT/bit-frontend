@@ -10,12 +10,9 @@
      * Main module of the application.
      */
     angular
-        .module('borealis', ['ui.router', 'uiGmapgoogle-maps', 'ncy-angular-breadcrumb', 'ngSanitize'])
-        .config(['$stateProvider', '$urlRouterProvider', '$locationProvider', 'uiGmapGoogleMapApiProvider', '$breadcrumbProvider', function($stateProvider, $urlRouterProvider, $locationProvider, uiGmapGoogleMapApiProvider, $breadcrumbProvider) {
-            uiGmapGoogleMapApiProvider.configure({
-                key: 'AIzaSyAJyaZXxDI2C8g_eCGkBED6TLqsZ7QKShQ',
-                libraries: 'weather,geometry,visualization'
-            });
+        .module('borealis', ['ui.router', 'ncy-angular-breadcrumb', 'ngSanitize'])
+        .config(['$stateProvider', '$urlRouterProvider', '$locationProvider', '$breadcrumbProvider', function($stateProvider, $urlRouterProvider, $locationProvider, $breadcrumbProvider) {
+            
             $breadcrumbProvider.setOptions({
                 prefixStateName: 'home',
                 templateUrl: 'views/templates/breadcrumb.html'
