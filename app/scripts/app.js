@@ -12,7 +12,7 @@
     angular
         .module('borealis', ['ui.router', 'ncy-angular-breadcrumb', 'ngSanitize'])
         .config(['$stateProvider', '$urlRouterProvider', '$locationProvider', '$breadcrumbProvider', function($stateProvider, $urlRouterProvider, $locationProvider, $breadcrumbProvider) {
-            
+
             $breadcrumbProvider.setOptions({
                 prefixStateName: 'home',
                 templateUrl: 'views/templates/breadcrumb.html'
@@ -32,8 +32,6 @@
                 .state('home', {
                     url: '/',
                     name: 'main',
-                    controller: 'MainController',
-                    controllerAs: 'main',
                     views: {
                         header: stdHeader,
                         content: {
@@ -49,8 +47,6 @@
                 }).state('contact', {
                     url: '/contact',
                     name: 'contact',
-                    controller: 'MainController',
-                    controllerAs: 'main',
                     views: {
                         header: stdHeader,
                         content: {
@@ -67,8 +63,6 @@
                 }).state('about', {
                     url: '/about',
                     name: 'about',
-                    controller: 'MainController',
-                    controllerAs: 'main',
                     views: {
                         header: stdHeader,
                         content: {
@@ -85,8 +79,6 @@
                 }).state('history', {
                     url: '/about/history',
                     name: 'history',
-                    controller: 'MainController',
-                    controllerAs: 'main',
                     views: {
                         header: stdHeader,
                         content: {
@@ -103,8 +95,6 @@
                 }).state('services', {
                     url: '/services',
                     name: 'services',
-                    controller: 'MainController',
-                    controllerAs: 'main',
                     views: {
                         header: stdHeader,
                         content: {
