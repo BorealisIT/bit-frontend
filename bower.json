@@ -12,5 +12,8 @@
     "angular-mocks": "^1.4.0"
   },
   "appPath": "app",
-  "moduleName": "borealis"
+  "moduleName": "borealis",
+  "resolutions": {
+    "angular": "1.6.4"
+  }
 }

@@ -100,6 +100,24 @@
                         parent: 'about',
                         label: 'Company History'
                     }
+                }).state('services', {
+                    url: '/services',
+                    name: 'services',
+                    controller: 'MainController',
+                    controllerAs: 'main',
+                    views: {
+                        header: stdHeader,
+                        content: {
+                            templateUrl: '/views/working.html',
+                            controller: 'MainController',
+                            controllerAs: 'main'
+                        },
+                        footer: footer
+                    },
+                    ncyBreadcrumb: {
+                        parent: 'home',
+                        label: 'Our Services'
+                    }
                 });
             $locationProvider.html5Mode(true);
 
